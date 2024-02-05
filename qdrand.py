@@ -10,7 +10,7 @@ MODEL_DIR = _base_dir / "data" / "models"
 qdrant = QdrantClient(path=QDRANDT_DIR)  # Persists changes to disk, fast prototyping
 
 model_path = str(MODEL_DIR / 'intfloat_multilingual-e5-small')
-encoder = SentenceTransformer(model_path)
+encoder = SentenceTransformer("all-MiniLM-L6-v2")
 
 vector_config = models.VectorParams(
         size=encoder.get_sentence_embedding_dimension(),  # Vector size is defined by used model
